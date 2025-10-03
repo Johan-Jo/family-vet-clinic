@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="vet-images/istockphoto-1885866215-612x612.webp" alt="Vet with cat" />
+          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&crop=center" alt="Vet with cat" />
         </div>
       </div>
     </section>
@@ -111,19 +111,19 @@
       <h2>Services & Prices</h2>
       <div class="grid">
         <div class="card service">
-          <img src="vet-images/istockphoto-2102632990-612x612.webp" alt="Checkup" />
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=300&fit=crop&crop=center" alt="Checkup" />
           <div class="pad"><h3>General Checkup</h3><p class="price">120 RON</p></div>
         </div>
         <div class="card service">
-          <img src="vet-images/istockphoto-2160576605-612x612.webp" alt="Vaccination" />
+          <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=400&h=300&fit=crop&crop=center" alt="Vaccination" />
           <div class="pad"><h3>Vaccination</h3><p class="price">100 RON</p></div>
         </div>
         <div class="card service">
-          <img src="vet-images/istockphoto-1995860804-612x612.webp" alt="Dental" />
+          <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop&crop=center" alt="Dental" />
           <div class="pad"><h3>Dental Care</h3><p class="price">250 RON</p></div>
         </div>
         <div class="card service">
-          <img src="vet-images/photo-1661534574850-298bda23b1dc.avif" alt="Surgery" />
+          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop&crop=center" alt="Surgery" />
           <div class="pad"><h3>Minor Surgery</h3><p class="price">from 500 RON</p></div>
         </div>
       </div>
@@ -135,21 +135,21 @@
         <div class="card">
           <div class="quote">"Kind staff and excellent doctors. Our cat is in the best hands."</div>
           <div class="reviewer">
-            <img class="avatar" src="reviews/istockphoto-1317523051-612x612.webp" alt="Reviewer 1" />
+            <img class="avatar" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face" alt="Reviewer 1" />
             <div><strong>Ana P.</strong><div>Cat Owner</div></div>
           </div>
         </div>
         <div class="card">
           <div class="quote">"Clear pricing and fast help when we needed it most."</div>
           <div class="reviewer">
-            <img class="avatar" src="reviews/istockphoto-2032509525-612x612.webp" alt="Reviewer 2" />
+            <img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Reviewer 2" />
             <div><strong>Mircea D.</strong><div>Dog Owner</div></div>
           </div>
         </div>
         <div class="card">
           <div class="quote">"Booked an appointment online and it was seamless."</div>
           <div class="reviewer">
-            <img class="avatar" src="reviews/photo-1632498301446-5f78baad40d0.avif" alt="Reviewer 3" />
+            <img class="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Reviewer 3" />
             <div><strong>Irina S.</strong><div>Bunny Owner</div></div>
           </div>
         </div>
@@ -179,39 +179,18 @@
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){e.preventDefault();document.querySelector(id).scrollIntoView({behavior:'smooth'});}})
     });
-    async function handleSubmit(e){
+    
+    function handleSubmit(e){
       e.preventDefault();
       const form=new FormData(e.target);
       const name=form.get('name');
-      const phone=form.get('phone');
-      const email=form.get('email');
-      const message=form.get('message');
       
-      try {
-        const response = await fetch('http://localhost:3001/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: name,
-            phone: phone,
-            email: email,
-            message: message
-          })
-        });
-        
-        if (response.ok) {
-          // Redirect to confirmation page with name parameter
-          window.location.href = `confirmation.html?name=${encodeURIComponent(name)}`;
-        } else {
-          throw new Error('Failed to send email');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        // Even if email fails, show confirmation page
-        window.location.href = `confirmation.html?name=${encodeURIComponent(name)}`;
-      }
+      // Show confirmation message
+      alert(`Thank you, ${name}! We will contact you shortly to confirm your appointment.`);
+      
+      // Redirect to confirmation page
+      window.location.href = `confirmation.html?name=${encodeURIComponent(name)}`;
+      
       return false;
     }
   </script>

@@ -1,11 +1,11 @@
 # Family Vet Clinic Landing Page
 
-A professional, modern landing page for a veterinary clinic with appointment booking functionality and email integration.
+A professional, modern landing page for a veterinary clinic with appointment booking functionality.
 
 ## 🏥 Features
 
 - **Professional Design**: Blue and white color scheme with modern, trustworthy layout
-- **Appointment Booking**: Contact form with email integration via Resend
+- **Appointment Booking**: Contact form with confirmation page
 - **Services & Pricing**: Showcase veterinary services with clear pricing
 - **Testimonials**: Customer reviews with photos
 - **Contact & Map**: Embedded Google Maps with clinic location
@@ -15,8 +15,7 @@ A professional, modern landing page for a veterinary clinic with appointment boo
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js (for email server)
-- Live Server extension (for frontend)
+- Modern web browser
 
 ### Installation
 
@@ -26,62 +25,20 @@ A professional, modern landing page for a veterinary clinic with appointment boo
    cd family-vet-clinic
    ```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up email (optional)**
-   - Get a Resend API key from [resend.com](https://resend.com)
-   - Replace `YOUR_RESEND_API_KEY_HERE` in `server.js` with your actual API key
-
-4. **Start the servers**
-
-   **Email Server:**
-   ```bash
-   npm start
-   ```
-
-   **Frontend (using Live Server):**
-   - Open `index.html` in VS Code
-   - Install Live Server extension
-   - Click "Go Live"
-
-## 📧 Email Configuration
-
-The project uses Resend for email delivery:
-
-- **From**: `onboarding@resend.dev`
-- **To**: `hej@johan.com.br`
-- **Subject**: "New Vet Appointment Request"
-
-To change the recipient email, update the `to` field in `server.js`.
-
-## 🗂️ Project Structure
-
-```
-family-vet-clinic/
-├── index.html              # Main landing page
-├── confirmation.html       # Appointment confirmation page
-├── server.js              # Email server (Node.js/Express)
-├── package.json           # Dependencies
-├── test-email.js          # Email testing utility
-├── vet-images/            # Veterinary service images
-├── reviews/               # Customer testimonial photos
-└── README.md             # This file
-```
+2. **Open in browser**
+   - Simply open `index.html` in your web browser
+   - Or use a local server like Live Server extension
 
 ## 🌐 Live Demo
 
-- **Frontend**: http://127.0.0.1:5500/index.html (with Live Server)
-- **Email Server**: http://localhost:3001
+Visit the live site at: [Your Vercel URL]
 
 ## 🎨 Design Features
 
 - **Color Palette**: Professional blue (#0a67b1) and white
 - **Typography**: System fonts for optimal performance
 - **Layout**: CSS Grid and Flexbox for responsive design
-- **Images**: Optimized web images for fast loading
+- **Images**: High-quality Unsplash images for professional look
 
 ## 📱 Responsive Design
 
@@ -96,10 +53,10 @@ The site is fully responsive and works on:
 ### Changing Clinic Information
 Update these files:
 - `index.html`: Clinic name, address, phone number
-- `server.js`: Email recipient address
+- `confirmation.html`: Contact information
 
 ### Adding Services
-Edit the services section in `index.html` and add corresponding images to `vet-images/`.
+Edit the services section in `index.html` and update the image URLs.
 
 ### Modifying Colors
 Update CSS custom properties in the `<style>` section of `index.html`.
